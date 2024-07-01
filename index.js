@@ -50,7 +50,7 @@ const locationDetails = async (ip) => {
   }
 };
 app.get('/', (req,res)=>{
-  res.status(200).send('Please append the following in the url bar: /api/hello?visitors_name=Your Name')
+  res.status(200).send('Please append the following in the url bar: /api/hello?visitor_name=Your Name')
 })
 app.get('/api/hello', async (req, res) => {
   const client_ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
