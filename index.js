@@ -49,7 +49,9 @@ const locationDetails = async (ip) => {
     return { location_name: 'Unknown', temperature: null };
   }
 };
-
+app.get('/', (req,res)=>{
+  res.status(200).send('Please enter the following in the url bar: /api/hello?visitors_name=Your Name')
+})
 app.get('/api/hello', async (req, res) => {
   const client_ip = req.ip;
   const visitor_name = req.query.visitor_name || 'Mark';
