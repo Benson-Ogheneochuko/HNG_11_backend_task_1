@@ -54,7 +54,7 @@ app.get('/', (req,res)=>{
 })
 app.get('/api/hello', async (req, res) => {
   const client_ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  const visitor_name = req.query.visitor_name || 'Mark';
+  const visitor_name = req.query.visitor_name || '- Nice to meet you, please tell me your name -';
   
   try {
     const { location_name, temperature } = await locationDetails(client_ip);
