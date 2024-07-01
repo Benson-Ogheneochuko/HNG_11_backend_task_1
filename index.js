@@ -53,7 +53,7 @@ app.get('/', (req,res)=>{
   res.status(200).send('Please enter the following in the url bar: /api/hello?visitors_name=Your Name')
 })
 app.get('/api/hello', async (req, res) => {
-  const client_ip = req.ip;
+  const client_ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   const visitor_name = req.query.visitor_name || 'Mark';
   
   try {
