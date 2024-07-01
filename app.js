@@ -30,7 +30,7 @@ class UserDetails {
 }
 
 const locationDetails = async (ip) => {
-  const weatherApi = `http://api.weatherapi.com/v1/current.json?key=${weatherApiKey}&q=${ip}&aqi=no`;
+  const weatherApi = `https://api.weatherapi.com/v1/current.json?key=${weatherApiKey}&q=${ip}&aqi=no`;
   
   try {
     const response = await fetch(weatherApi);
